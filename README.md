@@ -2,6 +2,7 @@
 ####DIY alarm clock built on a Raspberry Pi 2 Model B
 <br />
 <br />
+
 #THIS IS STILL IN ALPHA
 <br />
 <br />
@@ -15,9 +16,11 @@
 [Metal Push Button](https://www.adafruit.com/products/481)<br />
 [Rotary Encoder](https://www.adafruit.com/products/377)<br />
 [Metal Knob for Rotary Encoder](https://www.adafruit.com/products/2056)<br />
-(2)[3" - 8 Ohm 1 Watt Speakers](https://www.adafruit.com/products/1313)<br />
+(2) [3" - 8 Ohm 1 Watt Speakers](https://www.adafruit.com/products/1313)<br />
 [2.1W Class D Audio Amplifier ](https://www.adafruit.com/products/1552)<br />
 [3.5mm Plug/Plug Cable](https://www.adafruit.com/products/876)<br />
 [USB Audio Adapter](https://www.adafruit.com/products/1475)<br />
+
+Everything is connected internally with a breadboard that was provided in the Vilros Raspberry Pi kit. Also, a usb wifi dongle was used to access the interwebs.
 
 
