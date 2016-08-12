@@ -11,3 +11,4 @@
 ###Products Used:
 
 [1.2″ 4-Digit 7-Segment display](https://www.adafruit.com/products/1268)
+[Metal Push Button](https://www.adafruit.com/products/481)
