@@ -11,4 +11,9 @@
 ###Products Used:
 
 [1.2″ 4-Digit 7-Segment display](https://www.adafruit.com/products/1268)<br />
-[Metal Push Button](https://www.adafruit.com/products/481)
+[Metal Push Button](https://www.adafruit.com/products/481)<br />
+[Rotary Encoder](https://www.adafruit.com/products/377)<br />
+[Metal Knob for Rotary Encoder](https://www.adafruit.com/products/2056)<br />
+2 [Speaker - 3" - 8 Ohm 1 Watt](https://www.adafruit.com/products/1313)<br />
+
+
