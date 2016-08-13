@@ -23,5 +23,5 @@
 
 Everything is connected internally with a breadboard that was provided in the Vilros Raspberry Pi kit. Also, a usb wifi dongle was used to access the interwebs. <br />
 To assemble the shell/frame of the clock, I purchased a 12" x 30" Baltic Birch Plywood, that was 1/4" thick. Then using Adobe Illustrator, I created a CAD so that my local laser cutting shop could cut out the wood to my specifications.
-![alt tag](http://i.imgur.com/FB51WWR.jpg)
+<a href="http://imgur.com/FB51WWR"><img src="http://i.imgur.com/FB51WWRl.jpg" title="source: imgur.com" /></a>
 
