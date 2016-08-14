@@ -11,7 +11,7 @@
 <br />
 <br />
 ###Introduction
-  The purpose of this homemade alarm clock was to experiment with the Raspberry Pi 2 Model B and to provide a gift to my parents. The house that my parents reside in rarely has any blackouts; however, when they do occur, all of the digital clocks in the house need to be manually set. With the OhlarmClock, it will continue to perform regularly after a blackout by fetching time from the internet. In the future, I hope to make the OhlarmClock capable of drawing power from a constantly charging battery so that it will be able to run through a blackout. I also hope to utilize the OhlarmClock as the next "home controlling" siri by studying machine learning. 
+  The purpose of this homemade alarm clock was to experiment with the Raspberry Pi 2 Model B and to provide a gift to my parents. The house that my parents reside in rarely has any blackouts; however, when they do occur, all of the digital clocks in the house need to be manually set. With the OhlarmClock, it will continue to perform regularly after a blackout by fetching time from the internet. In the future, I hope to make the OhlarmClock capable of drawing power from a constantly charging battery so that it will be able to run through a blackout. I also hope to utilize the OhlarmClock as the next "home controlling" siri by implementing machine learning. 
 <br />
 ###Hardware Used:
 
