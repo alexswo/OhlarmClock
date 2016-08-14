@@ -4,6 +4,10 @@
 <br />
 
 #THIS IS STILL IN ALPHA
+
+<p align="center">
+<a href="http://imgur.com/FB51WWR"><img src="http://i.imgur.com/FB51WWRl.jpg" title="source: imgur.com" /></a>
+</p>
 <br />
 <br />
 ###Introduction
@@ -26,11 +30,8 @@ To assemble the shell/frame of the clock, I purchased a 12" x 30" Baltic Birch P
 
 ###Current Features:
 ####Weather
-By using Wunderground's API, the OhlarmClock will update every 15 minutes the high and low temperatures for that day. The OhlarmClock will also raise a signal whenever there is a high chance of rain.
+By using Wunderground's API, the OhlarmClock updates every 15 minutes the high and low temperatures for that day. The OhlarmClock will also raise a signal whenever there is a high chance of rain.
 ####Internet Radio
 
-<p align="center">
-<a href="http://imgur.com/FB51WWR"><img src="http://i.imgur.com/FB51WWRl.jpg" title="source: imgur.com" /></a>
-</p>
 
 
