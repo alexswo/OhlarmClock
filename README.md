@@ -1,5 +1,5 @@
 # OhlarmClock
-####DIY alarm clock built on a hola Raspberry Pi 2 Model B
+####DIY alarm clock built on a Raspberry Pi 2 Model B
 <br />
 <br />
 
