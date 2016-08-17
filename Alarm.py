@@ -10,12 +10,15 @@ import subprocess
 import sys
 from rotary_class import RotaryEncoder
 import menu_class
-import sevenSegmentFunc
+#import sevenSegmentFunc
+
+#subprocess.call("/home/pi/Projects/rmb.py",shell=True)
+#subprocess.call("/home/pi/Projects/rmb2.py",shell=True)
 
 media = musicPlayer.musicPlayer()
 menu = menu_class.menu_class()
-button = button.button()
-sevenSegment = sevenSegmentFunc.sevenSegmentFunc()
+#button = button.button()
+#sevenSegment = sevenSegmentFunc.sevenSegmentFunc()
 
 #Defining GPIO Pins for each switch related to the Rotary Encoder
 BUTTON_SWITCH = 19
@@ -33,16 +36,16 @@ alarmTime2 = linecache.getline("data.cfg", 3).rstrip('\n')
 
 while(1): 
     #buttonPressed() returns a 'False' when a button IS pressed. 
-    if button.buttonPressed() == False:
-	media.exitAlarm()
+#    if button.buttonPressed() == False:
+#	media.exitAlarm()
 #    print "The time is: " +  sevenSegment.getTime()
 #    print "The alarm is:" +  alarmTime1 
 #    if(alarmTime1 == sevenSegment.getTime()): #Change this afterwards
-#        print "######################################"
+#        media.soundAlarm()
 #    if(True):
 #        media.soundAlarm()
 #	print "HEllo!"
-    sevenSegment.setSSDisplay()
+#    sevenSegment.setSSDisplay()
     menu.updateMenu()
     t.sleep(0.000000000005)
 

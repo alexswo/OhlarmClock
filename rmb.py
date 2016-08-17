@@ -159,38 +159,38 @@ def main():
   lcd_init()
   for x in range (0,50):
     lcd_byte(LCD_LINE_1, LCD_CMD)
-    lcd_string("Rasbperry Pi")
+    lcd_string("Boot Step:")
     lcd_byte(LCD_LINE_2, LCD_CMD)
-    lcd_string("Model B" + str(x))
+    lcd_string(str(x))
   # Send some text
   lcd_byte(LCD_LINE_1, LCD_CMD)
-  lcd_string("Rasbperry Pi")
+  lcd_string("Please Wait")
   lcd_byte(LCD_LINE_2, LCD_CMD)
-  lcd_string("Model B")
+  lcd_string("")
 
-  time.sleep(3) # 3 second delay
+  time.sleep(2) # 3 second delay
 
   # Send some more text
-  lcd_byte(LCD_LINE_1, LCD_CMD)
-  lcd_string("Raspberrypi-spy")
-  lcd_byte(LCD_LINE_2, LCD_CMD)
-  lcd_string(".co.uk")
+#  lcd_byte(LCD_LINE_1, LCD_CMD)
+#  lcd_string("Raspberrypi-spy")
+#  lcd_byte(LCD_LINE_2, LCD_CMD)
+#  lcd_string(".co.uk")
 
-  time.sleep(3) # 3 second delay
-
-  # Send some more text
-  lcd_byte(LCD_LINE_1, LCD_CMD)
-  lcd_string("Modified by")
-  lcd_byte(LCD_LINE_2, LCD_CMD)
-  lcd_string("Robert Coward")
-
-  time.sleep(3) # 3 second delay
+#  time.sleep(3) # 3 second delay
 
   # Send some more text
-  lcd_byte(LCD_LINE_1, LCD_CMD)
-  lcd_string("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
-  lcd_byte(LCD_LINE_2, LCD_CMD)
-  lcd_string("1234567890!$%^&*()")
+#  lcd_byte(LCD_LINE_1, LCD_CMD)
+#  lcd_string("Modified by")
+#  lcd_byte(LCD_LINE_2, LCD_CMD)
+#  lcd_string("Robert Coward")
+
+#  time.sleep(3) # 3 second delay
+
+  # Send some more text
+#  lcd_byte(LCD_LINE_1, LCD_CMD)
+#  lcd_string("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+#  lcd_byte(LCD_LINE_2, LCD_CMD)
+#  lcd_string("1234567890!$%^&*()")
 
 # ==============================================================================
 # Ensure that the GPIO is cleaned up whichever way the program exits

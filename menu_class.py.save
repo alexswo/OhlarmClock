@@ -38,8 +38,7 @@ choosingTimeH = 0
 cursorForDate = 0
 choosingTimeM = 0
 alarmHour = 0
-alarmMinute = 0
-strAlarmHour = " "  
+alarmMinute = 0 
 class menu_class:
 
 	def __init__(self):
@@ -71,10 +70,6 @@ class menu_class:
 			self.alarmMenu(0)
 		elif(choosingTimeH == 1 and cursor == 1):
 			self.alarmMenu(1)
-		elif(choosingTimeM == 1 and cursor == 2):
-			self.alarmMenu(0)
-		elif(choosingTimeM == 1 and cursor == 1):
-			self.alarmMenu(1)
 		elif(cursor == 2):
 			if(cursorLocation == 0):
 				self.alarmMenu(0)
@@ -94,22 +89,18 @@ class menu_class:
 				modifyingVolume = 1
 			elif(cursorLocation == 1 and modifyingVolume == 1):
 				modifyingVolume = 0
-			elif(cursorLocation == 2 and choosingDate == 0 and choosingTimeH == 0):
+			elif(cursorLocation == 2 and choosingDate == 0):
 				choosingDate = 1
 				self.alarmMenu(2)
 			elif(cursorLocation == 2 and choosingDate == 1 and choosingTimeH == 0):
 				choosingDate = 0
 				choosingTimeH = 1
-				self.alarmMenu(2)
-				print "Hello 1!"
-			elif(cursorLocation == 2 and choosingTimeH == 1):
+			elif(cursorLocation == 2 and choosingDate == 0 and choosingTimeH == 1):
 				choosingTimeH = 0 
 				choosingTimeM = 1
-				print "Hello 2!"
-				self.alarmMenu(2)
-#			elif(cursorLocation == 2 and choosingDate == 0 and choosingTimeH == 1):
-#				choosingDate = 0
-#				choosingTimeH = 0
+			elif(cursorLocation == 2 and choosingDate == 0 and choosingTimeH == 1):
+				choosingDate = 0
+				choosingTimeH = 0
 				
 
 	def alarmMenu(self, leftOrRight):
@@ -125,8 +116,6 @@ class menu_class:
 		global choosingTimeM
 		global alarmHour
 		global alarmMinute
-		global strAlarmHour
-		global strAlarmMin
 		cursorLocation = 2
 		if(choosingDate == 1):
 			if(leftOrRight == 0):
@@ -172,40 +161,16 @@ class menu_class:
 					alarmHour = 0
 				else:
 					alarmHour = alarmHour + 1
-			if(alarmHour <= 9):
-				strAlarmHour = "0" + str(alarmHour)
-			else:
-				strAlarmHour = str(alarmHour)
 			self.oled.lcd_byte(LCD_LINE_1, LCD_CMD)
-                	self.oled.lcd_string(strAlarmHour + ":00 ")
-               		self.oled.lcd_byte(LCD_LINE_2, LCD_CMD)
-               		self.oled.lcd_string("^^")
+                	self.oled.lcd_string(str(alarmHour) + ":50 PM")
+                	self.oled.lcd_byte(LCD_LINE_2, LCD_CMD)
+                	self.oled.lcd_string("^^")
 			time.sleep(.2)
-		elif(choosingTimeM == 1):
-			if(leftOrRight == 0):
-				if(alarmMinute == 0):
-					alarmMinute = 60
-				else:
-					alarmMinute = alarmMinute - 1
-			elif(leftOrRight == 1):
-				if(alarmMinute == 60):
-					alarmMinute = 0
-				else:
-					alarmMinute = alarmMinute + 1
-			if(alarmMinute <= 9):
-				strAlarmMin = "0" + str(alarmMinute)
-			else:
-				strAlarmMin = str(alarmMinute)
-		        self.oled.lcd_byte(LCD_LINE_1, LCD_CMD)
-                        self.oled.lcd_string(strAlarmHour + ":" + strAlarmMin)
-                        self.oled.lcd_byte(LCD_LINE_2, LCD_CMD)
-                        self.oled.lcd_string("   ^^")
-                        time.sleep(.2)
 		else: 
 			self.oled.lcd_byte(LCD_LINE_1, LCD_CMD)
-                	self.oled.lcd_string("    Set Alarm")
+                	self.oled.lcd_string("Change Alarm?")
                 	self.oled.lcd_byte(LCD_LINE_2, LCD_CMD)
-                	self.oled.lcd_string("")
+                	self.oled.lcd_string("Yes or No?")
 			time.sleep(.2)					
 	def mainMenu(self):
 			#Make calls to the 16x2 display and update it.
