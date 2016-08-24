@@ -40,6 +40,8 @@ choosingTimeM = 0
 alarmHour = 0
 alarmMinute = 0
 strAlarmHour = " "  
+strAlarmMin = " " 
+alarmString = " " 
 class menu_class:
 
 	def __init__(self):
@@ -94,7 +96,7 @@ class menu_class:
 				modifyingVolume = 1
 			elif(cursorLocation == 1 and modifyingVolume == 1):
 				modifyingVolume = 0
-			elif(cursorLocation == 2 and choosingDate == 0 and choosingTimeH == 0):
+			elif(cursorLocation == 2 and choosingDate == 0 and choosingTimeH == 0 and choosingTimeM == 0):
 				choosingDate = 1
 				self.alarmMenu(2)
 			elif(cursorLocation == 2 and choosingDate == 1 and choosingTimeH == 0):
@@ -107,11 +109,18 @@ class menu_class:
 				choosingTimeM = 1
 				print "Hello 2!"
 				self.alarmMenu(2)
-#			elif(cursorLocation == 2 and choosingDate == 0 and choosingTimeH == 1):
-#				choosingDate = 0
-#				choosingTimeH = 0
-				
-
+			elif(cursorLocation == 2 and choosingTimeM == 1):
+				choosingTimeM = 0 
+				self.alarmMenu(2)
+	def cancelBtn(self):
+		global choosigDate
+		global choosingTimeH
+		global choosingTimeM
+		if(cursorLocation == 2):
+			choosingDate = 0
+			choosingTimeH = 0 
+			choosingTimeM = 0
+			self.alarmMenu(2)
 	def alarmMenu(self, leftOrRight):
 		#0 -- Left
 		#1 -- Right
@@ -127,6 +136,7 @@ class menu_class:
 		global alarmMinute
 		global strAlarmHour
 		global strAlarmMin
+		global alarmString
 		cursorLocation = 2
 		if(choosingDate == 1):
 			if(leftOrRight == 0):
@@ -141,22 +151,22 @@ class menu_class:
 					cursorForDate = cursorForDate + 1
 			space = " "
                 	if(cursorForDate == 0):
-                        	space = " ^"
+                        	space = " ^^"
                 	elif(cursorForDate == 1):
-                        	space = "   ^"
+                        	space = "    ^"
                 	elif(cursorForDate == 2):
-                        	space = "     ^"
+                        	space = "      ^"
                 	elif(cursorForDate == 3):
-                        	space = "       ^"
+                        	space = "        ^"
                 	elif(cursorForDate == 4):
-                        	space = "         ^"
+                        	space = "          ^"
                 	elif(cursorForDate == 5):
-                        	space = "           ^^"
+                        	space = "            ^"
                 	elif(cursorForDate == 6):
                         	space = "              ^^"
 
                 	self.oled.lcd_byte(LCD_LINE_1, LCD_CMD)
-                	self.oled.lcd_string(" M T W R F ST SN")
+                	self.oled.lcd_string(" SN M T W R F ST")
                 	self.oled.lcd_byte(LCD_LINE_2, LCD_CMD)
                		self.oled.lcd_string(space)
                 	time.sleep(.2)
@@ -196,12 +206,20 @@ class menu_class:
 				strAlarmMin = "0" + str(alarmMinute)
 			else:
 				strAlarmMin = str(alarmMinute)
+			alarmString = strAlarmHour + ":" + strAlarmMin
 		        self.oled.lcd_byte(LCD_LINE_1, LCD_CMD)
-                        self.oled.lcd_string(strAlarmHour + ":" + strAlarmMin)
+                        self.oled.lcd_string(alarmString)
                         self.oled.lcd_byte(LCD_LINE_2, LCD_CMD)
                         self.oled.lcd_string("   ^^")
                         time.sleep(.2)
 		else: 
+			with open('data.cfg','r') as file:
+				data = file.readlines()
+			data[cursorForDate] = alarmString + '\n'
+			with open('data.cfg','w') as file:
+				file.writelines(data)
+			alarmMinute = 0
+			alarmHour = 0
 			self.oled.lcd_byte(LCD_LINE_1, LCD_CMD)
                 	self.oled.lcd_string("    Set Alarm")
                 	self.oled.lcd_byte(LCD_LINE_2, LCD_CMD)
