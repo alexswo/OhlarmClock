@@ -12,6 +12,7 @@ from rotary_class import RotaryEncoder
 import menu_class
 import sevenSegmentFunc
 
+isPlayingMusic = False
 #subprocess.call("/home/pi/OhlarmClock/rmb.py",shell=True)
 #subprocess.call("/home/pi/OhlarmClock/rmb2.py",shell=True)
 
@@ -39,11 +40,16 @@ while(1):
     if button.buttonPressed() == False:
 	menu.cancelBtn()
 	media.exitAlarm()
+	if(isPlayingMusic == False):
+		isPlayingMusic = True
+	else:
+		isPlayingMusic = False
+	t.sleep(.1)
 #    print "The time is: " +  sevenSegment.getTime()
 #    print "The alarm is:" +  alarmTime1 
 #    if(alarmTime1 == sevenSegment.getTime()): #Change this afterwards
 #        media.soundAlarm()
-#    if(True):
+#    if(True and isPlayingMusic == False):
 #        media.soundAlarm()
 #	print "HEllo!"
     sevenSegment.setSSDisplay()

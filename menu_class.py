@@ -11,6 +11,7 @@ from datetime import datetime
 import pytz
 import oled_class 
 import RPi.GPIO as GPIO
+import os #For radio -- mpc tool  
 
 #For Weather
 import urllib2
@@ -79,17 +80,21 @@ class menu_class:
 			self.alarmMenu(1)
 		elif(cursor == 2):
 			if(cursorLocation == 0):
-				self.alarmMenu(0)
+				self.radioMenu(0)
 			elif(cursorLocation == 1):
 				self.mainMenu()
 			elif(cursorLocation == 2):
 				self.volumeMenu(0)
+			elif(cursorLocation == 3):
+				self.alarmMenu(0)
 		elif(cursor == 1):
 			if(cursorLocation == 0):
 				self.volumeMenu(0)
 			elif(cursorLocation == 1):
 				self.alarmMenu(0)
 			elif(cursorLocation == 2):
+				self.radioMenu(0)
+			elif(cursorLocation == 3):
 				self.mainMenu()
 		elif(cursor == 3):
 			if(cursorLocation == 1 and modifyingVolume == 0):
@@ -114,6 +119,17 @@ class menu_class:
 			elif(cursorLocation == 2 and choosingTimeM == 1):
 				choosingTimeM = 0 
 				self.alarmMenu(2)
+	def radioMenu(self, leftOrRIght):
+		global LCD_LINE_1
+                global LCD_LINE_2
+                global LCD_CMD
+		global cursorLocation
+		cursorLocation = 3
+		self.oled.lcd_byte(LCD_LINE_1, LCD_CMD)
+                self.oled.lcd_string("      Radio")
+                self.oled.lcd_byte(LCD_LINE_2, LCD_CMD)
+                self.oled.lcd_string(" " )
+                time.sleep(.2)
 	def cancelBtn(self):
 		global choosigDate
 		global choosingTimeH
