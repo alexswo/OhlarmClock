@@ -94,8 +94,10 @@ class menu_class:
 		elif(cursor == 3):
 			if(cursorLocation == 1 and modifyingVolume == 0):
 				modifyingVolume = 1
+				self.volumeMenu(2)
 			elif(cursorLocation == 1 and modifyingVolume == 1):
 				modifyingVolume = 0
+				self.volumeMenu(2)
 			elif(cursorLocation == 2 and choosingDate == 0 and choosingTimeH == 0 and choosingTimeM == 0):
 				choosingDate = 1
 				self.alarmMenu(2)
@@ -247,6 +249,9 @@ class menu_class:
 		time.sleep(.2)
 		#print stringOfCurrentDate
 	def volumeMenu(self, leftOrRight):
+		#0 -- Left
+		#1 -- Right
+		#2 -- Null
 		global cursorLocation
 		global modifyingVolume
                 global LCD_LINE_1
@@ -260,10 +265,15 @@ class menu_class:
 				self.callback.adjustVolume(1)
 		#this calls back to media.adjustVolume -- which is in the file musicPlayer.py
 #		GPIO.cleanup()
-		self.oled.lcd_byte(LCD_LINE_1, LCD_CMD)
-                self.oled.lcd_string("Volume Lvl:")
-                self.oled.lcd_byte(LCD_LINE_2, LCD_CMD) 
-                self.oled.lcd_string(str(self.callback.getVolume()))
+			self.oled.lcd_byte(LCD_LINE_1, LCD_CMD)
+        	        self.oled.lcd_string("   Volume Lvl:")
+               		self.oled.lcd_byte(LCD_LINE_2, LCD_CMD) 
+                	self.oled.lcd_string("       " + str(self.callback.getVolume()))
+		else:
+			self.oled.lcd_byte(LCD_LINE_1, LCD_CMD)
+                        self.oled.lcd_string("    Set Volume")
+                        self.oled.lcd_byte(LCD_LINE_2, LCD_CMD)
+                        self.oled.lcd_string(" ")
 		print "Spinning . . . ."
 		time.sleep(.2)
 	def cursorOnMainMenu(self):
