@@ -34,4 +34,14 @@ By using Wunderground's API, the OhlarmClock updates every 15 minutes the high a
 ####Internet Radio
 
 
+<br>
+<br><br>
+<br>
+
+
+
+Used this github page to find a library for the encoder:
+https://github.com/guyc/py-gaugette
+ 	-- Had to install "WiringPi" and "WiringPi2-Python"
+
 
