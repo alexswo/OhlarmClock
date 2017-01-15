@@ -6,7 +6,7 @@
 #THIS IS STILL IN ALPHA
 
 <p align="center">
-<a href="http://imgur.com/FB51WWR"><img src="http://i.imgur.com/FB51WWRl.jpg" title="source: imgur.com" /></a>
+<a href="http://imgur.com/XYqK6"><img src="http://i.imgur.com/imgur.com/XYqK6.jpg" title="source: imgur.com" /></a>
 </p>
 <br />
 <br />
