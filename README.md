@@ -3,8 +3,6 @@
 <br />
 <br />
 
-#THIS IS STILL IN ALPHA
-
 <p align="center">
 <a href="http://imgur.com/XYqK6"><img src="http://i.imgur.com/FDrCeoz.jpg" title="source: imgur.com" /></a>
 </p>
@@ -27,11 +25,12 @@
 
 Everything is connected internally with a breadboard that was provided in the Vilros Raspberry Pi kit. Also, a usb wifi dongle was used to access the interwebs. <br />
 To assemble the shell/frame of the clock, I purchased a 12" x 30" Baltic Birch Plywood with 1/4" thickness. Then using Adobe Illustrator, I created a CAD file so that my local laser cutting shop could cut out the wood to my specifications. <br />
-
+###Hardware Setup:
+<a href="https://i.imgur.com/0Rse64X.png"><img src="https://i.imgur.com/0Rse64X.png" title="source: imgur.com" /></a>
 ###Current Features:
 ####Weather
 By using Wunderground's API, the OhlarmClock updates every 15 minutes the high and low temperatures for that day. The OhlarmClock will also raise a signal whenever there is a high chance of rain.
-####Internet Radio
+
 
 
 <br>
