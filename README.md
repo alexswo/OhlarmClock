@@ -31,7 +31,7 @@ To assemble the shell/frame of the clock, I purchased a 12" x 30" Baltic Birch P
 ####Weather
 By using Wunderground's API, the OhlarmClock updates every 15 minutes the high and low temperatures for that day. The OhlarmClock will also raise a signal whenever there is a high chance of rain.
 
-
+##Documentation in the process of being updated
 
 <br>
 <br><br>
